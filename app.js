@@ -14,10 +14,13 @@ app.set("view engine","handlebars");
 app.use(express.static("public"));
 
 // 載入外部JSON檔案
-const restaurant = require("./restaurant.json");
+const restaurants = require("./restaurant.json");
 
 // 設定路由與渲染網頁
-// 先空著
+app.get("/", (req, res)=>{
+  console.log(restaurants.results[0]);
+  res.render("index", {restaurants:restaurants.results})
+})
 
 
 // 啟動並監聽伺服器
