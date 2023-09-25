@@ -69,6 +69,7 @@ a {
   --search-bar-outer-background-color: #fce2cf;
   --search-bar-outer-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   --search-bar-inner-text-color: #9b4b4b;
+  --btn-major-text-color: #fff;
   --btn-major-background-color: #9b4b4b;
   --placeholder-text-color: #aaaaaa;
 
@@ -113,6 +114,7 @@ header {
   overflow: hidden;
 }
 
+
 .navbar .navbar-brand {
   color: var(--navbar-brand-text-color);
 }
@@ -130,5 +132,41 @@ header {
   background-image: var(--banner-background-img);
   filter: blur(3px);
 }
+
+
+/* 撰寫 search-bar 樣式 */
+.search-bar .search-bar-outer {
+  margin: 0 auto;
+  max-width: 680px;
+  background: var(--search-bar-outer-background-color);
+  border-radius: 8px;
+  padding: 20px 30px;
+  margin-top: -60px;
+  box-shadow: var(--search-bar-outer-shadow);
+  -webkit-box-shadow: var(--search-bar-outer-shadow);
+  -moz-box-shadow: var(--search-bar-outer-shadow);
+}
+
+.search-bar .search-bar-inner h4{
+  color: var(--search-bar-inner-text-color);
+}
+
+.search-bar .btn-major {
+  color: var(--btn-major-text-color);
+  background: var(--btn-major-background-color);
+}
+
+.form-control::placeholder {
+  color: var(--placeholder-text-color);
+  font-size: 0.8rem;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  border: var(--form-control-focus-border-color);
+}
+
 
 
