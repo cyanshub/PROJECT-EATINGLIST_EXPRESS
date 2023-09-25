@@ -63,7 +63,8 @@ a {
   --navbar-brand-text-color: #4592af;
   --navbar-brand-hover-text-color: #226089;
 
-  --banner-background-img: #dddddd center center url('https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg');
+  --banner-background-img: url('https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg');
+
 
   --search-bar-outer-background-color: #fce2cf;
   --search-bar-outer-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
@@ -88,7 +89,7 @@ body {
   font-size: 1rem;
   line-height: 1.4;
   color: var(--main-text-color);
-  background-color: var(--main-background-color);
+  /* background: var(--main-background-color); */
 }
 
  a {
@@ -119,4 +120,15 @@ header {
 .navbar .navbar-brand:hover {
   color: var(--navbar-brand-hover-text-color);
 }
+
+/* 制定 banner 樣式 */
+.banner {
+  position: relative;
+  z-index: -10;
+  margin: -5px;
+  height: 360px;
+  background-image: var(--banner-background-img);
+  filter: blur(3px);
+}
+
 
