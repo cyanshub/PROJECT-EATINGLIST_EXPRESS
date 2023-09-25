@@ -91,8 +91,7 @@ body {
   background-color: var(--main-background-color);
 }
 
-.container a {
-  text-decoration: none;
+ a {
   color: var(--main-text-color);
 }
 
@@ -108,4 +107,16 @@ body {
 }
 /* 專案共用樣式:end */
 
+/* 制定 header 樣式 */
+header {
+  overflow: hidden;
+}
+
+.navbar .navbar-brand {
+  color: var(--navbar-brand-text-color);
+}
+
+.navbar .navbar-brand:hover {
+  color: var(--navbar-brand-hover-text-color);
+}
 
