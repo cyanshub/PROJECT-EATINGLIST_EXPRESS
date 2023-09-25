@@ -56,9 +56,30 @@ a {
 }
 
 /* reset: end */
+/* 顏色參數化: start */
+:root {
+  --main-text-color: #212529;
+  --main-background-color: #f6f7f8;
+  --navbar-brand-text-color: #4592af;
+  --navbar-brand-hover-text-color: #226089;
+
+  --banner-background-img: #dddddd center center url('https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg');
+
+  --search-bar-outer-background-color: #fce2cf;
+  --search-bar-outer-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  --search-bar-inner-text-color: #9b4b4b;
+  --btn-major-background-color: #9b4b4b;
+  --placeholder-text-color: #aaaaaa;
 
 
+  --form-control-focus-shadow: none;
+  --form-control-focus-border-color: #ced4da;
 
-
+  --card-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  --restaurant-category-text-color: #666666;
+  --restaurant-show-title-text-color: white;
+  --restaurant-show-title-text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+/* 顏色參數化: end */
 
 
