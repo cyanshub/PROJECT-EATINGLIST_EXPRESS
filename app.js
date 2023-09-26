@@ -16,11 +16,26 @@ app.use(express.static("public"));
 // 載入外部JSON檔案
 const restaurants = require("./restaurant.json");
 
-// 設定路由與渲染網頁
+// 設定路由與渲染網頁:首頁
 app.get("/", (req, res)=>{
   console.log(restaurants.results[0]);
   res.render("index", {restaurants:restaurants.results})
 })
+
+
+// 設定路游與渲染網頁:首頁搜尋功能
+app.get("/search", (req, res) => {
+  // input 的 name="keyword" 會以?的形式帶入路由 
+
+  // 依餐廳名稱篩選(使用filter陣列方法)
+  const keyword = req.query.keyword;
+  const restaurants_filter = restaurants.results.filter(restaurant =>
+    restaurant.name.includes(keyword) ||
+    restaurant.category.includes(keyword));
+
+  res.render("index", {restaurants:restaurants_filter,keyword:keyword});
+})
+
 
 
 // 啟動並監聽伺服器
