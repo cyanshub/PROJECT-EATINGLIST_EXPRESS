@@ -6,14 +6,16 @@
   <title>Express project: eatinglist</title>
 
   {{!-- 載入資源 --}}
+  {{!-- 小心 "/" 與 "./" 的區別: "/"由專案根目錄開始; "./" 由路由路靜作無起始點 --}}
   {{!-- 本地前端框架 --}}
-  <link rel="stylesheet" href="./stylesheets/bootstrap.css">
+  <link rel="stylesheet" href="/stylesheets/bootstrap.css">
   
   {{!-- 外部GOOGLE字體 --}}
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
 
   {{!-- 本地樣式檔案 --}}
-  <link rel="stylesheet" href="./stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+
   
 </head>
 <body>
@@ -37,10 +39,11 @@
 
   
   {{!-- 載入資源 --}}
+  {{!-- 小心 "/" 與 "./" 的區別: "/"由專案根目錄開始; "./" 由路由路靜作無起始點 --}}
   {{!-- 本地bootstrap使用的組件 --}}
-  <script src="./javascripts/popper.js"></script>
+  <script src="/javascripts/popper.js"></script>
   {{!-- 本地bootstrap --}}
-  <script src="./javascripts/bootstrap.js"></script>
+  <script src="/javascripts/bootstrap.js"></script>
   {{!-- font awesome 資源 --}}
   <script src="https://kit.fontawesome.com/7f5b494958.js" crossorigin="anonymous"></script>
 </body>

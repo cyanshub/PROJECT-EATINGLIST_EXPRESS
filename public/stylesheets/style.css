@@ -81,6 +81,7 @@ a {
   --restaurant-category-text-color: #666666;
   --restaurant-show-title-text-color: white;
   --restaurant-show-title-text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  --text-shadow: 1px 1px black;
 }
 /* 顏色參數化: end */
 /* 專案共用樣式: start */
@@ -133,7 +134,7 @@ header {
   filter: blur(3px);
 }
 
-
+/* 首頁樣式 */
 /* 撰寫 search-bar 樣式 */
 .search-bar .search-bar-outer {
   margin: 0 auto;
@@ -201,6 +202,22 @@ header {
 }
 
 
+/* 分頁樣式 */
+.restaurant-show-title {
+  position: relative;
+  top: -100px;
+  color: var(--restaurant-show-title-text-color);
+  text-align: center;
+  font-size: 5rem;
+  box-shadow: var(--restaurant-show-title-text-shadow);
+  -webkit-box-shadow: var(--restaurant-show-title-text-shadow);
+  -moz-box-shadow: var(--restaurant-show-title-text-shadow);
+  line-height: 1.1;
+  text-shadow: var(--text-shadow);
+}
+
+
+
 /* 導入媒體查詢 */
 @media screen and (max-width: 992px){
   .card img {
@@ -208,7 +225,11 @@ header {
   }
 }
 
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+  .restaurant-show-title{
+    font-size: 3rem;
+  }
+}
 
 @media screen and (max-width: 575px) {
   .card img {
