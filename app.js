@@ -38,6 +38,19 @@ app.get("/search", (req, res) => {
 
 
 
+// 設定路游與渲染網頁:打造分頁
+app.get("/restaurants/:restaurant_id", (req, res)=>{
+  // 動態路由的資料型態一律都是字串, 要記得轉換
+  const restaurant_id = Number(req.params.restaurant_id);
+
+  // .find方法是將變數s逐一抽出變數傳入檢查是否符合條件
+  const restaurant = restaurants.results.find(restaurant => restaurant.id === restaurant_id );
+
+  res.render("show", {restaurant:restaurant})
+})
+
+
+
 // 啟動並監聽伺服器
 app.listen(port, ()=>{
   console.log(`Express is running on http://localhost:${port}`);
