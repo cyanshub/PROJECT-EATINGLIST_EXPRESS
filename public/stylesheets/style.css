@@ -113,6 +113,11 @@ body {
 /* 制定 header 樣式 */
 header {
   overflow: hidden;
+  height: 60px;
+}
+
+.navbar {
+  height: 100%;
 }
 
 
