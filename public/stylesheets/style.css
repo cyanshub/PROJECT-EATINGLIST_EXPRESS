@@ -35,8 +35,9 @@ menu {
   margin: 0;
   padding: 0;
   font-weight: normal;
-  line-height: 0.9;
+  line-height: 1.5;
   list-style: none;
+  text-align: justify;
 }
 
 table {
@@ -232,12 +233,16 @@ header {
 
 @media screen and (max-width: 768px) {
   .restaurant-show-title{
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 
 @media screen and (max-width: 575px) {
   .card img {
     height: auto;
+  }
+
+  .restaurant-show-title {
+    font-size: 2rem;
   }
 }
