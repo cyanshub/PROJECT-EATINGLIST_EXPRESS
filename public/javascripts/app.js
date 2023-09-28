@@ -1,12 +1,12 @@
-// 載入外部JSON檔案
-import restaurants_results from '/restaurant.json' assert{ type:'json'};
+// // 載入外部JSON檔案: 在本地測試時請運行以下這行; 註解掉另外的
+// import restaurants_results from '/restaurant.json' assert{ type:'json'};
 
-// gitHub 網頁版: 載入外部JSON檔案
+// 載入外部JSON檔案: 在 gitHub 伺服器運行時, 請載入以下這兩行
 const gitHubName = "PROJECT-EATINGLIST_EXPRESS";
 import restaurants_results from "/PROJECT-EATINGLIST_EXPRESS/restaurant.json" assert{ type: 'json'};
 
+
 const restaurants = restaurants_results.results;
-console.log(restaurants);
 
 
 // 選定目標
