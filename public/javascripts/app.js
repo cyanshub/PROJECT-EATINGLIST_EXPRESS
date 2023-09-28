@@ -3,7 +3,7 @@
 
 // gitHub 網頁版: 載入外部JSON檔案
 const gitHubName = "PROJECT-EATINGLIST_EXPRESS";
-import restaurants_results from `/${gitHubName}/restaurant.json` assert{ type: 'json'};
+import restaurants_results from "/PROJECT-EATINGLIST_EXPRESS/restaurant.json" assert{ type: 'json'};
 
 const restaurants = restaurants_results.results;
 console.log(restaurants);
