@@ -3,7 +3,7 @@
 
 // gitHub 網頁版: 載入外部JSON檔案
 const gitHubName = "PROJECT-EATINGLIST_EXPRESS";
-import restaurants_results from '/PROJECT-EATINGLIST_EXPRESS/restaurant.json' assert{ type: 'json'};
+import restaurants_results from `/${gitHubName}/restaurant.json` assert{ type: 'json'};
 
 const restaurants = restaurants_results.results;
 console.log(restaurants);
@@ -26,7 +26,7 @@ function renderEatinglist(data){
   `
   data.forEach( item => {
     rawHTML += `         
-          <a href="./show.html#${item.id}" class="text-secondary">
+          <a href="${gitHubName}/show.html#${item.id}" class="text-secondary">
             <div class="card mb-3">
               <img src="${item.image}" alt="${item.name}" class="card-img-top">
               <div class="card-body p-3">
