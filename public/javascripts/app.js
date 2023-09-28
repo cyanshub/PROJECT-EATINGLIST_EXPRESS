@@ -25,7 +25,8 @@ function renderEatinglist(data){
         <div class="row row-cols-sm-3">
   `
   data.forEach( item => {
-    rawHTML += `         
+    // 在 gitHub專案的時候, 連結前面要補專案名稱; 若用 "./"的方式, 則對應html檔案必須放在根目錄
+    rawHTML += `  
           <a href="${gitHubName}/show.html#${item.id}" class="text-secondary">
             <div class="card mb-3">
               <img src="${item.image}" alt="${item.name}" class="card-img-top">
