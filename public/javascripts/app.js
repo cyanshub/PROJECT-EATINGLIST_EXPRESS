@@ -1,9 +1,9 @@
-// 載入外部JSON檔案法一: 在本地測試時請運行以下這行; 註解掉法二.
-import restaurants_results from '/restaurant.json' assert{ type:'json'};
+// // 載入外部JSON檔案法一: 在本地測試時請運行以下這行; 註解掉法二.
+// import restaurants_results from '/restaurant.json' assert{ type:'json'};
 
-// // 載入外部JSON檔案法二: 在 gitHub 伺服器運行時, 請載入以下這兩行; 註解掉法一.
-// const gitHubName = "PROJECT-EATINGLIST_EXPRESS";
-// import restaurants_results from "/PROJECT-EATINGLIST_EXPRESS/restaurant.json" assert{ type: 'json'};
+// 載入外部JSON檔案法二: 在 gitHub 伺服器運行時, 請載入以下這兩行; 註解掉法一.
+const gitHubName = "PROJECT-EATINGLIST_EXPRESS";
+import restaurants_results from "/PROJECT-EATINGLIST_EXPRESS/restaurant.json" assert{ type: 'json'};
 
 
 const restaurants = restaurants_results.results;
