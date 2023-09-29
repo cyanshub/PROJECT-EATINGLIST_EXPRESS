@@ -1,7 +1,7 @@
-// // 載入外部JSON檔案: 在本地測試時請運行以下這行; 註解掉另外的.
+// // 載入外部JSON檔案法一: 在本地測試時請運行以下這行; 註解掉法二.
 // import restaurants_results from '/restaurant.json' assert{ type:'json'};
 
-// 載入外部JSON檔案: 在 gitHub 伺服器運行時, 請載入以下這兩行; 註解掉另外的.
+// 載入外部JSON檔案法二: 在 gitHub 伺服器運行時, 請載入以下這兩行; 註解掉法一.
 const gitHubName = "PROJECT-EATINGLIST_EXPRESS";
 import restaurants_results from "/PROJECT-EATINGLIST_EXPRESS/restaurant.json" assert{ type: 'json'};
 
@@ -70,29 +70,27 @@ if (!searchForm) { } else {
 
     // 選定目標
     const searchInput = document.querySelector('#search-input');
-    
+
     // 獲取input元素的值
     const keyword = searchInput.value.trim().toLowerCase();
-    
+
     // 檢查1: 卻保有輸入字串
     if (!keyword.length) {
       renderEatinglist(restaurants);
       return alert("Please enter a valid string!");
-    } else {
-      console.log("測試")
-
-      // 使用.filter陣列方法依餐廳名稱或類別篩選
-      const restaurants_filter = restaurants.filter(restaurant =>
-        restaurant.name.toLowerCase().includes(keyword) ||
-        restaurant.category.toLowerCase().includes(keyword));
-
-      if (restaurants_filter.length===0){
-        // 檢查2: 若搜尋沒有結果也跳出提示
-        return alert("Cannot find a restaurant with keyword:" + keyword);
-      }
-
-      renderEatinglist(restaurants_filter);
     }
+
+    // 使用.filter陣列方法依餐廳名稱或類別篩選
+    const restaurants_filter = restaurants.filter(restaurant =>
+      restaurant.name.toLowerCase().includes(keyword) ||
+      restaurant.category.toLowerCase().includes(keyword));
+
+    if (restaurants_filter.length === 0) {
+      // 檢查2: 若搜尋沒有結果也跳出提示
+      return alert("Cannot find a restaurant with keyword:" + keyword);
+    }
+
+    renderEatinglist(restaurants_filter);
   })
 }
 

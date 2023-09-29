@@ -14,12 +14,12 @@ app.set("view engine","handlebars");
 app.use(express.static("public"));
 
 // 載入外部JSON檔案
-const restaurants = require("./restaurant.json");
+const restaurants_results = require("./restaurant.json");
 
 // 設定路由與渲染網頁:首頁
 app.get("/", (req, res)=>{
-  console.log(restaurants.results[0]);
-  res.render("index", {restaurants:restaurants.results})
+  console.log(restaurants_results.results[0]);
+  res.render("index", {restaurants:restaurants_results.results})
 })
 
 
@@ -29,7 +29,7 @@ app.get("/search", (req, res) => {
 
   // 依餐廳名稱篩選(使用filter陣列方法)
   const keyword = req.query.keyword;
-  const restaurants_filter = restaurants.results.filter(restaurant =>
+  const restaurants_filter = restaurants_results.results.filter(restaurant =>
     restaurant.name.includes(keyword) ||
     restaurant.category.includes(keyword));
 
@@ -44,7 +44,7 @@ app.get("/restaurants/:restaurant_id", (req, res)=>{
   const restaurant_id = Number(req.params.restaurant_id);
 
   // .find方法是將變數s逐一抽出變數傳入檢查是否符合條件
-  const restaurant = restaurants.results.find(restaurant => restaurant.id === restaurant_id );
+  const restaurant = restaurants_results.results.find(restaurant => restaurant.id === restaurant_id );
 
   res.render("show", {restaurant:restaurant})
 })
