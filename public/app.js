@@ -1,8 +1,6 @@
 // 載入外部JSON檔案
-import restaurants_results from "./restaurant.json" assert{ type: 'json'};
-
-
-const restaurants = restaurants_results.results;
+import data_json from "./data.json" assert{ type: 'json'};
+const restaurants = data_json.restaurants;
 
 
 // 選定目標
