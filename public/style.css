@@ -64,7 +64,7 @@ a {
   --navbar-brand-text-color: #4592af;
   --navbar-brand-hover-text-color: #226089;
 
-  --banner-background-img: url('https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg');
+  --banner-background-img: url('./images/banner/banner-photo-1.jpg');
 
 
   --search-bar-outer-background-color: #fce2cf;
