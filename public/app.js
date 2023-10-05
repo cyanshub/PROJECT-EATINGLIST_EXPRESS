@@ -23,7 +23,7 @@ function renderEatinglist(data){
     rawHTML += `  
           <a href="./show.html#${item.id}" class="text-secondary">
             <div class="card mb-3">
-              <img src="./${item.image}" alt="${item.name}" class="card-img-top">
+              <img src="./public/${item.image}" alt="${item.name}" class="card-img-top">
               <div class="card-body p-3">
                 <h6 class="card-title mb-1">${item.name}</h6>
                 <div class="restaurant-category mb-1">
@@ -123,7 +123,7 @@ function showEatinglist(item){
             ${item.description}
           </p>
 
-          <img src="./${item.image}" alt="${item.name}" class="rounded mb-4 w-100 d-block mx-auto">
+          <img src="./public/${item.image}" alt="${item.name}" class="rounded mb-4 w-100 d-block mx-auto">
 
         </div>
       </div>
