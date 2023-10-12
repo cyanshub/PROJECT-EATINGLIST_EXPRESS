@@ -100,7 +100,7 @@ body {
 }
 
 .container {
-  width: 85%;
+  width: 95%;
   margin: 0 auto 3rem auto;
 }
 
@@ -135,7 +135,7 @@ header {
   position: relative;
   z-index: -10;
   margin: -5px;
-  height: 360px;
+  height: 300px;
   background-image: var(--banner-background-img);
   filter: blur(3px);
 }
@@ -148,7 +148,7 @@ header {
   background: var(--search-bar-outer-background-color);
   border-radius: 8px;
   padding: 20px 30px;
-  margin-top: -60px;
+  margin-top: -90px;
   box-shadow: var(--search-bar-outer-shadow);
   -webkit-box-shadow: var(--search-bar-outer-shadow);
   -moz-box-shadow: var(--search-bar-outer-shadow);
@@ -178,6 +178,13 @@ header {
 
 
 /* 撰寫圖片集樣式 */
+.album-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  grid-gap: 1.5rem;
+}
+
 .card {
   box-shadow: var(--card-shadow);
   -webkit-box-shadow:var(--card-shadow);

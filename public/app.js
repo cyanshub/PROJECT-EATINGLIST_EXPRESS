@@ -14,10 +14,7 @@ const searchForm = document.querySelector('#search-form');
 // 設計 function
 function renderEatinglist(data){
   let rawHTML = ''
-  rawHTML += `
-  <div class="col col-md-10 mx-auto">
-        <div class="row row-cols-sm-3">
-  `
+
   data.forEach( item => {
     // 在 gitHub專案的時候, 連結前面要補專案名稱; 若用 "./"的方式, 則對應html檔案必須放在根目錄
     rawHTML += `  
@@ -40,10 +37,7 @@ function renderEatinglist(data){
     `
   })
 
-  rawHTML += `
-          </div>
-      </div>
-  `
+
   // 注意: 每次讀取HTML時, DOM元素會刷新, 僅能寫入目前存在的HTML元素, 故需先判斷是否為null, 若null則不執行
   dataPanel.innerHTML = rawHTML;
 }
