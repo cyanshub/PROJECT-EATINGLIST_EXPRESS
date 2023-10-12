@@ -81,6 +81,18 @@
   </div>
 
 
+  <!-- {{!-- 增加頁碼功能 --}} -->
+<ul id="paginator" class="pagination justify-content-center">
+  {{#each pages}}
+  <li class="page-item">
+    <a href="/page={{this}}" class="page-link" data-page="{{this}}">{{this}}</a>
+  </li>
+  {{/each}}
+</ul>
+
+
+
+
   <!-- {{!-- 載入資源 --}} -->
   <!-- {{!-- 小心 "/" 與 "./" 的區別: "/"由專案根目錄或public開始; "./" 由路由路靜作無起始點 --}} -->
   <!-- {{!-- 本地bootstrap使用的組件 --}} -->

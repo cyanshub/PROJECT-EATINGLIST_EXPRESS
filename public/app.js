@@ -7,6 +7,81 @@ const restaurants = data_json.restaurants;
 const dataPanel = document.querySelector('#data-panel-eatinglist');
 const dataPanelShow = document.querySelector('#data-panel-eatinglist-show');
 const searchForm = document.querySelector('#search-form');
+const searchInput = document.querySelector('#search-input');
+const paginator = document.querySelector('#paginator');
+
+
+// 保留express專案中, 需要移植到一般專案的的javascript功能
+// #1 定義需要用到的變數
+const cards_per_page = 8;
+
+
+// #2 功能設計
+// 限制每頁顯示圖卡張數
+function getItemsByPage(data, page) {
+  const startIndex = (page - 1) * cards_per_page;
+  const EndIndex = page * cards_per_page;
+  return data.slice(startIndex, EndIndex);
+}
+
+// 動態渲染網站頁數
+function renderPaginator(amount) {
+  // 用圖卡數量決定網站頁數
+  const numberOfPages = Math.ceil(amount / cards_per_page);
+  console.log(`網站頁數: ${numberOfPages}`);
+
+  // 產生指定長度的空陣列
+  let pages = Array(numberOfPages);
+
+  // 動態產生網站頁數陣列
+  for (let i = 0; i < numberOfPages; i++) {
+    pages[i] = i + 1;
+  }
+  console.log(`動態產生網站頁數陣列: ${pages}`);
+
+  // return pages;
+  let rawHTML = '';
+  pages.forEach(item => {
+    rawHTML += `
+  <li class="page-item">
+    <a href="#page=${item}" class="page-link" data-page="${item}">${item}</a>
+  </li>
+  `
+  })
+  paginator.innerHTML = rawHTML;
+}
+
+
+// #3 呼叫函式產生所需要的變數
+// 在有page將資料進行分段的概念後，預設顯示第一段的陣列資料
+let page = 1;
+let restaurants_page = getItemsByPage(restaurants, page);
+
+// 呼叫函式渲染第一段的陣列資料
+// start
+if (!paginator) { } else {
+  renderPaginator(restaurants.length);
+  renderEatinglist(restaurants_page);
+}
+// end
+
+
+// 動態路由功能: 獲取頁碼並依據頁碼重新渲染特定區段之資料
+// start
+if (!paginator) { } else {
+  if (!paginator) { } else {
+    paginator.addEventListener("click", function onPaginatorClicked(event) {
+      page = Number(event.target.dataset.page);
+      console.log(`點選的頁碼: ${page}`);
+      restaurants_page = getItemsByPage(restaurants, page);
+
+      // 渲染對應頁碼的陣列資料
+      renderEatinglist(restaurants_page);
+    })
+  }
+}
+// end
+
 
 
 // 首頁渲染資料
@@ -43,7 +118,8 @@ function renderEatinglist(data){
 }
 
 if (!dataPanel) { } else {
-renderEatinglist(restaurants);}
+// renderEatinglist(restaurants);
+}
 // end
 
 
@@ -56,15 +132,13 @@ if (!searchForm) { } else {
   searchForm.addEventListener("submit", function onSearchFormSubmitted(event) {
     event.preventDefault();
 
-    // 選定目標
-    const searchInput = document.querySelector('#search-input');
-
     // 獲取input元素的值
     const keyword = searchInput.value.trim().toLowerCase();
 
     // 檢查1: 卻保有輸入字串
     if (!keyword.length) {
-      renderEatinglist(restaurants);
+      renderPaginator(restaurants.length);
+      renderEatinglist(restaurants_page);
       return alert("Please enter a valid string!");
     }
 
@@ -78,6 +152,7 @@ if (!searchForm) { } else {
       return alert("Cannot find a restaurant with keyword:" + keyword);
     }
 
+    renderPaginator([].length); // 搜尋結果不要顯示頁數
     renderEatinglist(restaurants_filter);
   })
 }
