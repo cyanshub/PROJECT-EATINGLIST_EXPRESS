@@ -21,6 +21,8 @@ const restaurants = data_json.restaurants;
 // 設計函式處理清單資料
 // #1 定義需要用到的變數
 const cards_per_page = 8;
+let page; // 用來處理資料陣列的分段
+let restaurants_page; // 經過處理的分段陣列資料
 
 
 // #2 功能設計
@@ -54,8 +56,8 @@ function renderPaginator(amount){
 const pages = renderPaginator(restaurants.length);
 
 // 在有page將資料進行分段的概念後，預設顯示第一段的陣列資料
-let page = 1;
-let restaurants_page = getItemsByPage(restaurants, page);
+page = 1;
+restaurants_page = getItemsByPage(restaurants, page);
 
 
 
